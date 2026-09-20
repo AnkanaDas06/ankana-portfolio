@@ -1,4 +1,22 @@
-﻿# 💻 Ankana Das — 3D Computer Workstation Research Portfolio
+<p align="center">
+  <img src="public/ankana-photo.jpg" alt="Ankana Das" width="180" style="border-radius: 50%; border: 3px solid #06b6d4; box-shadow: 0 0 25px rgba(6,182,212,0.5);" />
+</p>
+
+<h1 align="center">Ankana Das</h1>
+
+<p align="center">
+  <b>Computer Science & AI/ML Researcher · Adamas University, Kolkata</b><br />
+  <i>B.Tech CSE (Artificial Intelligence & Machine Learning) · CGPA: 8.13</i>
+</p>
+
+<p align="center">
+  <a href="https://ankanadas06.github.io/ankana-portfolio/">🌐 Live 3D Website</a> •
+  <a href="https://github.com/AnkanaDas06">GitHub</a> •
+  <a href="https://linkedin.com/in/ankana-das2006">LinkedIn</a> •
+  <a href="mailto:dasankana410@gmail.com">Email</a>
+</p>
+
+---
 
 An interactive 3D academic research portfolio website for **Ankana Das**, Computer Science & Engineering undergraduate specializing in Artificial Intelligence & Machine Learning at **Adamas University, Kolkata**.
 
@@ -9,11 +27,11 @@ Designed with a **pure black computer workstation aesthetic** featuring WebGL 3D
 ## 🌟 Key Highlights
 
 - **Pure Black Workstation UI**: CRT scanline simulation, subtle computational grid overlays, and telemetry header.
+- **Interactive 3D Holographic Portrait**: Hardware-accelerated 3D WebGL/CSS perspective tilt, drag-to-rotate physics, and biometric HUD.
 - **Interactive 3D Neural Core**: Three.js WebGL centerpiece with physics-based drag-to-rotate interaction, dual wireframe/solid render modes, and orbital telemetry satellites.
 - **3D Particle Constellation**: Ambient Three.js background constellation that moves smoothly with mouse parallax.
-- **Hardware-Accelerated 3D Card Tilt**: Dynamic 3D perspective tilt with specular lighting glare across project and research modules.
 - **Curriculum Vitae Source of Truth**: 100% grounded in verified academic achievements, projects, publications, and coursework.
-- **Custom Branding**: Fully configured for \nkanadas.com\ and \nkana-portfolio.vercel.app\.
+- **Custom Branding**: Fully configured for `ankanadas.com` and `ankanadas06.github.io/ankana-portfolio/`.
 
 ---
 

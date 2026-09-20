@@ -42,7 +42,8 @@ export default function Navbar() {
         >
           <div className="relative w-8 h-8 rounded-full overflow-hidden border border-cyan-500/50 p-0.5">
             <img
-              src={cvData.personal.photo}
+              src={cvData.personal.photo || './ankana-photo.jpg'}
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = './ankana-photo.jpg'; }}
               alt={cvData.personal.name}
               className="w-full h-full object-cover object-top rounded-full"
             />

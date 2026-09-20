@@ -44,7 +44,8 @@ export default function HomeHero() {
               <div className="relative flex-shrink-0">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full p-[2.5px] bg-gradient-to-tr from-cyan-400 via-blue-500 to-emerald-400 shadow-xl shadow-cyan-500/30">
                   <img
-                    src={cvData.personal.photo}
+                    src={cvData.personal.photo || './ankana-photo.jpg'}
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = './ankana-photo.jpg'; }}
                     alt={cvData.personal.name}
                     className="w-full h-full object-cover object-top rounded-full filter contrast-[1.04]"
                   />
