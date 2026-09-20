@@ -66,36 +66,49 @@ export const cvData = {
 
   projects: [
     {
+      id: "code-quality-engine",
+      title: "AI-Driven Code Quality Engine",
+      highlight: "89.4% Precision · Automated Patch Synthesis",
+      tags: ["AI Systems", "Python", "PyTorch", "CodeBERT", "ASTs"],
+      github: "https://github.com/AnkanaDas06",
+      summary: "Static analyzer parsing Abstract Syntax Trees (ASTs) with fine-tuned CodeBERT to detect semantic bugs, security anti-patterns, and synthesize automated patches with high precision.",
+      tech: "Python, PyTorch, LibCST, CodeBERT, Hugging Face Transformers"
+    },
+    {
+      id: "sandhan-biometrics",
+      title: "SANDHAN — AI Facial Biometrics Platform",
+      highlight: "96.4% Verification Accuracy · SIH Top 10 National Finalist",
+      tags: ["Computer Vision", "FastAPI", "OpenCV", "FaceNet", "FAISS", "Docker"],
+      github: "https://github.com/AnkanaDas06",
+      summary: "Real-time edge biometric verification platform combining 512-D FaceNet embeddings with sub-42ms FAISS vector indexing across 50k+ records. Recognized as Top 10 National Finalist at Smart India Hackathon (SIH).",
+      tech: "FastAPI, OpenCV, FaceNet (512-D), FAISS, Docker, Linux"
+    },
+    {
+      id: "valuation-engine",
+      title: "Predictive Real Estate Valuation Engine",
+      highlight: "R² 0.912 · 28.4% MAE Reduction · CI/CD",
+      tags: ["MLOps", "Scikit-Learn", "XGBoost", "SHAP", "Docker"],
+      github: "https://github.com/AnkanaDas06",
+      summary: "End-to-end regression pipeline trained on 20k+ property transactions with robust IQR outlier pruning, spatial feature engineering, SHAP model transparency, and containerized CI/CD workflows.",
+      tech: "Python, Scikit-Learn, XGBoost, Pandas, SHAP, Docker, GitHub Actions"
+    },
+    {
+      id: "algovault-stl",
+      title: "AlgoVault — High-Performance STL Algorithms",
+      highlight: "Deterministic O(log N) · 35% Memory Fragmentation Cut",
+      tags: ["C++20", "STL", "GTest", "Valgrind", "CMake"],
+      github: "https://github.com/AnkanaDas06",
+      summary: "Modern C++20 algorithmic framework implementing 250+ standard and advanced structures with custom fixed-block memory pool allocators and zero memory leaks verified with Valgrind.",
+      tech: "Modern C++20, STL, Google Test (GTest), Valgrind, CMake, Linux"
+    },
+    {
       id: "yolo-vision",
-      title: "Real-Time Object Detection & Spatial Tracking (YOLOv8)",
-      tags: ["Computer Vision", "YOLOv8", "PyTorch", "OpenCV", "Deep Learning"],
+      title: "YOLO Real-Time Object Detection & Vision Pipeline",
+      highlight: "Real-Time Neural Inference & Multi-Class Detection",
+      tags: ["Computer Vision", "YOLO", "PyTorch", "OpenCV", "CUDA"],
       github: "https://github.com/AnkanaDas06/yolo",
-      summary: "Custom real-time multi-class object detection and spatial tracking engine implementing YOLOv8 architecture with PyTorch, OpenCV, and high-FPS bounding box estimation.",
-      tech: "Python, YOLOv8, PyTorch, OpenCV, CUDA"
-    },
-    {
-      id: "facial-biometrics-emotion",
-      title: "Facial Biometrics & Real-Time Emotion Recognition",
-      tags: ["Computer Vision", "FaceNet", "OpenCV", "Deep Learning", "MediaPipe"],
-      github: "https://github.com/AnkanaDas06",
-      summary: "Deep learning computer vision system for facial landmark alignment, 512-D biometric vector verification, and multi-class real-time facial expression and emotion classification.",
-      tech: "Python, OpenCV, DeepFace, FaceNet, MediaPipe"
-    },
-    {
-      id: "autonomous-lane-detection",
-      title: "Autonomous Perception: Lane & Obstacle Detection Pipeline",
-      tags: ["Computer Vision", "Autonomous AI", "OpenCV", "CNN", "Edge AI"],
-      github: "https://github.com/AnkanaDas06",
-      summary: "Vision pipeline for self-driving perception utilizing perspective geometry transforms, Hough space line tracking, edge filtering, and real-time vehicular obstacle segmentation.",
-      tech: "Python, OpenCV, NumPy, Convolutional Neural Networks"
-    },
-    {
-      id: "gesture-vision-controller",
-      title: "Interactive AI Gesture Recognition & Virtual Controller",
-      tags: ["Computer Vision", "MediaPipe", "OpenCV", "HCI", "Gesture AI"],
-      github: "https://github.com/AnkanaDas06",
-      summary: "Touchless human-computer interaction system tracking 21 3D hand landmarks in real-time to translate dynamic hand gestures into virtual interface commands and spatial drawing controls.",
-      tech: "Python, MediaPipe, OpenCV, Scikit-Learn"
+      summary: "Custom real-time multi-class object detection and spatial neural inference pipeline implementing YOLO architectures with PyTorch and OpenCV for high-frame-rate bounding and classification.",
+      tech: "Python, YOLO, PyTorch, OpenCV, CUDA"
     }
   ]
 };

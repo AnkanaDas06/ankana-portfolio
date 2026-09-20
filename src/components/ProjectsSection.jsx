@@ -13,10 +13,10 @@ export default function ProjectsSection() {
             SLIDE 03 // PROJECTS
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-normal text-white tracking-tight">
-            Computer Vision (CV) & AI Projects
+            Curriculum Vitae (CV) & Engineering Projects
           </h2>
           <p className="mt-2 text-stone-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-            Cutting-edge Computer Vision (CV), Deep Learning, and Artificial Intelligence projects developed by Ankana Das, focusing on real-time neural inference, facial biometrics, autonomous perception, and gesture tracking.
+            Core intelligent systems, machine learning models, and high-performance engineering archives from Ankana Das's verified CV — featuring AI code analyzers, SIH national finalist biometrics, predictive valuation, high-performance C++20 algorithms, and computer vision.
           </p>
         </div>
 
@@ -34,9 +34,16 @@ export default function ProjectsSection() {
                       rel="noreferrer"
                       className="text-cyan-300 hover:text-white transition-colors flex items-center gap-1"
                     >
-                      GitHub Repo ↗
+                      GitHub Profile / Repo ↗
                     </a>
                   </div>
+
+                  {project.highlight && (
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 mb-2.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/40 text-[10.5px] font-mono">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>{project.highlight}</span>
+                    </div>
+                  )}
 
                   <h3 className="font-serif text-xl text-white font-medium mb-2">
                     {project.title}

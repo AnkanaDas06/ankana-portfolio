@@ -95,7 +95,7 @@ export default function HomeHero({ onNavigatePage }) {
                 onClick={() => onNavigatePage ? onNavigatePage(3) : (window.location.hash = '#slide-3')}
                 className="px-4 py-2.5 bg-cyan-400 hover:bg-cyan-300 text-black text-xs font-mono font-bold rounded shadow-lg shadow-cyan-400/20 transition-all hover:-translate-y-0.5"
               >
-                Explore CV & AI Projects (Slide 03) →
+                Explore CV Projects (Slide 03) →
               </button>
               <button
                 onClick={() => onNavigatePage ? onNavigatePage(2) : (window.location.hash = '#slide-2')}

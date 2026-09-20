@@ -8,7 +8,7 @@ import ContactSection from './ContactSection';
 export const SLIDES = [
   { id: 1, title: 'Profile & 3D Core', tag: 'OVERVIEW', desc: 'Identity, 3D Photo Hologram & Neural Simulation' },
   { id: 2, title: 'Skills & Languages', tag: 'TECHNOLOGY', desc: 'C, C++, Java, Python, React.js & Core CS' },
-  { id: 3, title: 'CV & AI Projects', tag: 'VISION', desc: 'YOLOv8, Facial Biometrics, Autonomous Vision & Gestures' },
+  { id: 3, title: 'CV Projects', tag: 'ENGINEERING', desc: 'AI Code Engine, SANDHAN Biometrics, Valuation & AlgoVault' },
   { id: 4, title: 'Academics & Honors', tag: 'ACHIEVEMENTS', desc: 'Adamas Univ Semesters, CPL 4th Place & HCL GUVI' },
   { id: 5, title: 'Contact & Socials', tag: 'CONNECT', desc: 'WhatsApp, LinkedIn, GitHub, Instagram & Email' },
 ];
