@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { cvData } from '../data/cvData';
 
-export default function Navbar({ currentPage = 1, setCurrentPage }) {
+export default function Navbar({ currentSlide = 1, setCurrentSlide }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: '01 Profile & 3D', page: 1 },
-    { label: '02 Research & Projects', page: 2 },
-    { label: '03 Publications', page: 3 },
-    { label: '04 Academics', page: 4 },
-    { label: '05 Skills & CV', page: 5 },
+    { label: '01 Profile & 3D', slide: 1 },
+    { label: '02 Research', slide: 2 },
+    { label: '03 Projects', slide: 3 },
+    { label: '04 Publications', slide: 4 },
+    { label: '05 Open Source', slide: 5 },
+    { label: '06 Honors & CV', slide: 6 },
   ];
 
-  const handleNavClick = (pageNum) => {
-    if (setCurrentPage) {
-      setCurrentPage(pageNum);
-      window.location.hash = `page-${pageNum}`;
+  const handleNavClick = (slideNum) => {
+    if (setCurrentSlide) {
+      setCurrentSlide(slideNum);
+      window.location.hash = `slide-${slideNum}`;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setMobileMenuOpen(false);
@@ -48,16 +49,16 @@ export default function Navbar({ currentPage = 1, setCurrentPage }) {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-2 text-xs font-mono">
+        <nav className="hidden lg:flex items-center space-x-1.5 text-xs font-mono">
           {navItems.map((item) => {
-            const isActive = currentPage === item.page;
+            const isActive = currentSlide === item.slide;
             return (
               <button
                 key={item.label}
-                onClick={() => handleNavClick(item.page)}
-                className={`px-3 py-1.5 rounded transition-all relative ${
+                onClick={() => handleNavClick(item.slide)}
+                className={`px-2.5 py-1.5 rounded transition-all relative ${
                   isActive 
-                    ? 'text-cyan-300 bg-cyan-500/15 border border-cyan-500/40 font-bold shadow-sm' 
+                    ? 'text-cyan-300 bg-cyan-500/20 border border-cyan-500/50 font-bold shadow-sm' 
                     : 'text-stone-400 hover:text-white hover:bg-stone-900 border border-transparent'
                 }`}
               >
@@ -67,10 +68,10 @@ export default function Navbar({ currentPage = 1, setCurrentPage }) {
           })}
         </nav>
 
-        {/* Action Button: View CV (Page 5) */}
+        {/* Action Button: View CV (Slide 6) */}
         <div className="hidden sm:flex items-center space-x-3">
           <button
-            onClick={() => handleNavClick(5)}
+            onClick={() => handleNavClick(6)}
             className="px-3 py-1.5 text-xs font-mono font-medium text-cyan-300 bg-cyan-950/40 border border-cyan-500/30 hover:border-cyan-400 hover:bg-cyan-900/30 rounded transition-colors"
           >
             Curriculum Vitae
@@ -80,7 +81,7 @@ export default function Navbar({ currentPage = 1, setCurrentPage }) {
         {/* Mobile menu trigger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-stone-400 hover:text-white focus:outline-none"
+          className="lg:hidden p-2 text-stone-400 hover:text-white focus:outline-none"
           aria-label="Toggle Navigation"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,13 +96,13 @@ export default function Navbar({ currentPage = 1, setCurrentPage }) {
 
       {/* Mobile dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-stone-950 border-b border-stone-800 px-6 py-4 space-y-2 font-mono">
+        <div className="lg:hidden bg-stone-950 border-b border-stone-800 px-6 py-4 space-y-2 font-mono">
           {navItems.map((item) => {
-            const isActive = currentPage === item.page;
+            const isActive = currentSlide === item.slide;
             return (
               <button
                 key={item.label}
-                onClick={() => handleNavClick(item.page)}
+                onClick={() => handleNavClick(item.slide)}
                 className={`w-full text-left text-xs py-2 px-3 rounded transition-colors ${
                   isActive ? 'bg-cyan-500/20 text-cyan-300 font-bold' : 'text-stone-300 hover:text-cyan-400'
                 }`}
@@ -112,10 +113,10 @@ export default function Navbar({ currentPage = 1, setCurrentPage }) {
           })}
           <div className="pt-2 border-t border-stone-800">
             <button
-              onClick={() => handleNavClick(5)}
+              onClick={() => handleNavClick(6)}
               className="inline-block text-xs font-mono text-cyan-400 hover:underline"
             >
-              View Curriculum Vitae (Page 5)
+              View Curriculum Vitae (Slide 06)
             </button>
           </div>
         </div>
