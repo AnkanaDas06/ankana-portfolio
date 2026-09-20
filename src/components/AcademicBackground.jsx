@@ -1,132 +1,102 @@
-import React from 'react';
+﻿import React from 'react';
 import { cvData } from '../data/cvData';
 import { TiltCard } from '../utils/tiltEffect';
 
 export default function AcademicBackground() {
-  const [btech, higherSec, sec] = cvData.education;
+  const { semesters } = cvData.personal;
 
   return (
-    <section id="about" className="relative py-20 border-b border-stone-800 bg-[#06080f]/90">
+    <section id="academics" className="relative py-12 bg-transparent">
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         
         {/* Header */}
-        <div className="mb-14">
+        <div className="mb-10">
           <span className="font-mono text-xs text-cyan-400 font-medium tracking-widest uppercase block mb-2">
-            05 / ACADEMIC BACKGROUND
+            SLIDE 04 // ACADEMICS & ACHIEVEMENTS
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-normal text-white tracking-tight">
-            Scholastic Foundation
+            Academic Standings & Honors
           </h2>
-          <p className="mt-3 text-stone-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-            Rigorous undergraduate training in computer science theory, discrete mathematics, and statistical learning at <span className="text-cyan-400 font-semibold">Adamas University</span>, preceded by honors science coursework.
+          <p className="mt-2 text-stone-300 text-sm sm:text-base max-w-2xl leading-relaxed">
+            Scholastic performance at <span className="text-cyan-400 font-semibold">Adamas University</span>, state board examination distinctions, and competitive programming achievements.
           </p>
         </div>
 
-        <div className="space-y-10">
-          {/* Primary: B.Tech University Entry with 3D Tilt */}
-          <TiltCard maxTilt={4} className="rounded-sm">
-            <div className="bg-dark-900/80 border border-stone-800 rounded-sm p-6 sm:p-8 shadow-xl">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-stone-800 pb-4 mb-5">
-                <div>
-                  <span className="font-mono text-xs text-cyan-400 uppercase tracking-wider font-semibold">
-                    Undergraduate Degree · Adamas University
-                  </span>
-                  <h3 className="font-serif text-2xl text-white font-normal mt-0.5">
-                    {btech.degree}
-                  </h3>
-                  <p className="text-sm font-sans text-stone-300">
-                    Specialization in <span className="text-cyan-300 font-medium">{btech.specialization}</span> · {btech.institution}
-                  </p>
-                </div>
-                <div className="text-left sm:text-right">
-                  <span className="font-mono text-xs text-stone-400 block">
-                    {btech.period}
-                  </span>
-                  <span className="font-mono text-sm font-bold text-cyan-400">
-                    {btech.gpa}
-                  </span>
-                </div>
-              </div>
-
-              {/* GPA Breakdown & Honors */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono mb-6 bg-dark-950 p-4 rounded-sm border border-stone-800">
-                <div>
-                  <span className="text-stone-500 block mb-0.5">Semester Performance:</span>
-                  <span className="text-white font-medium">
-                    {btech.semesters}
-                  </span>
-                </div>
-                <div>
-                  <span className="text-stone-500 block mb-0.5">Academic Honors:</span>
-                  <span className="text-cyan-300 font-medium">
-                    {btech.honors}
-                  </span>
-                </div>
-              </div>
-
-              {/* Coursework Index */}
-              <div>
-                <span className="font-mono text-xs text-stone-400 uppercase tracking-wider block mb-2">
-                  Curriculum & Theoretical Coursework:
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {btech.coursework.map((course) => (
-                    <span
-                      key={course}
-                      className="px-2.5 py-1 text-xs font-mono text-stone-300 bg-dark-850 border border-stone-800 rounded-sm hover:border-cyan-500/40 transition-colors"
-                    >
-                      {course}
-                    </span>
-                  ))}
-                </div>
+        {/* 1. Academic Standings Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+          <TiltCard maxTilt={5}>
+            <div className="p-5 rounded bg-black/90 border border-cyan-500/40 shadow-xl font-mono">
+              <span className="text-[10px] text-stone-500 uppercase tracking-wider block mb-1">CURRENT DEGREE</span>
+              <div className="text-base text-white font-bold font-serif mb-1">Adamas University</div>
+              <div className="text-xs text-cyan-300">B.Tech CSE (AI & ML)</div>
+              <div className="text-[11px] text-stone-400 mt-2 border-t border-stone-800 pt-2 flex items-center justify-between">
+                <span>Standing:</span>
+                <span className="text-emerald-400 font-bold">{semesters.year}</span>
               </div>
             </div>
           </TiltCard>
 
-          {/* Secondary: School Education (Visually understated) */}
-          <div className="pt-4">
-            <span className="font-mono text-xs text-stone-500 uppercase tracking-wider block mb-4">
-              Secondary & Higher Secondary Education (Prior Record)
-            </span>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Higher Secondary */}
-              <TiltCard maxTilt={4} className="rounded-sm">
-                <div className="p-4 bg-dark-900/60 border border-stone-800 rounded-sm text-xs space-y-1">
-                  <div className="flex items-baseline justify-between text-stone-500 font-mono">
-                    <span>WBCHSE (Class XII)</span>
-                    <span>{higherSec.period}</span>
-                  </div>
-                  <h4 className="font-medium text-white font-sans text-sm">
-                    {higherSec.degree}
-                  </h4>
-                  <p className="text-cyan-300 font-mono">
-                    {higherSec.score} · {higherSec.stream}
-                  </p>
-                  <p className="text-stone-400 text-[11px] pt-1">
-                    {higherSec.honors}
-                  </p>
-                </div>
-              </TiltCard>
-
-              {/* Secondary */}
-              <TiltCard maxTilt={4} className="rounded-sm">
-                <div className="p-4 bg-dark-900/60 border border-stone-800 rounded-sm text-xs space-y-1">
-                  <div className="flex items-baseline justify-between text-stone-500 font-mono">
-                    <span>WBBSE (Class X)</span>
-                    <span>{sec.period}</span>
-                  </div>
-                  <h4 className="font-medium text-white font-sans text-sm">
-                    {sec.degree}
-                  </h4>
-                  <p className="text-cyan-300 font-mono">
-                    {sec.score}
-                  </p>
-                  <p className="text-stone-400 text-[11px] pt-1">
-                    {sec.honors}
-                  </p>
-                </div>
-              </TiltCard>
+          <TiltCard maxTilt={5}>
+            <div className="p-5 rounded bg-black/90 border border-emerald-500/40 shadow-xl font-mono">
+              <span className="text-[10px] text-stone-500 uppercase tracking-wider block mb-1">SEMESTER PERFORMANCE</span>
+              <div className="text-xl text-emerald-400 font-bold mb-1">{semesters.cgpa}</div>
+              <div className="text-xs text-stone-300">1st Sem: <strong className="text-white">{semesters.sem1}</strong></div>
+              <div className="text-xs text-stone-300">2nd Sem: <strong className="text-white">{semesters.sem2}</strong></div>
+              <div className="text-[10px] text-stone-500 mt-2 border-t border-stone-800 pt-2">
+                Adamas Univ Semester Exams
+              </div>
             </div>
+          </TiltCard>
+
+          <TiltCard maxTilt={5}>
+            <div className="p-5 rounded bg-black/90 border border-sky-500/40 shadow-xl font-mono">
+              <span className="text-[10px] text-stone-500 uppercase tracking-wider block mb-1">STATE BOARD SCORES</span>
+              <div className="text-xs text-stone-300 mb-1">
+                WBBSE (10th): <strong className="text-white">{semesters.wbbse}</strong>
+              </div>
+              <div className="text-xs text-stone-300">
+                WBCHSE (12th): <strong className="text-white">{semesters.wbchse}</strong>
+              </div>
+              <div className="text-[10px] text-emerald-400 font-semibold mt-3 border-t border-stone-800 pt-2">
+                ✓ First Division with Distinction
+              </div>
+            </div>
+          </TiltCard>
+        </div>
+
+        {/* 2. Key Achievements & Competitions */}
+        <div className="space-y-4">
+          <h3 className="font-mono text-xs uppercase tracking-widest text-cyan-400 font-bold">
+            COMPETITIVE HONORS & RECOGNITIONS
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {cvData.achievements.map((item, idx) => (
+              <TiltCard key={item.title} maxTilt={5}>
+                <div className="p-5 rounded bg-black/85 border border-stone-800 hover:border-cyan-500/40 transition-all shadow-xl h-full flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between pb-2 mb-2 border-b border-stone-800 font-mono text-[11px]">
+                      <span className="text-stone-500">HONOR_0{idx + 1}</span>
+                      <span className="px-2 py-0.5 rounded bg-cyan-950/60 text-cyan-300 border border-cyan-500/30 font-semibold">
+                        {item.badge}
+                      </span>
+                    </div>
+
+                    <h4 className="font-serif text-lg text-white font-medium mb-1.5">
+                      {item.title}
+                    </h4>
+
+                    <p className="text-xs text-stone-300 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-stone-900 mt-3 text-[11px] font-mono text-stone-400">
+                    Issuer: <span className="text-stone-200">{item.issuer}</span>
+                  </div>
+                </div>
+              </TiltCard>
+            ))}
           </div>
         </div>
 

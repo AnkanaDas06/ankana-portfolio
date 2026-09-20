@@ -92,44 +92,49 @@ export default function HomeHero({ onNavigatePage }) {
             {/* Actions */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <button
-                onClick={() => onNavigatePage ? onNavigatePage(2) : (window.location.hash = '#page-2')}
+                onClick={() => onNavigatePage ? onNavigatePage(3) : (window.location.hash = '#slide-3')}
                 className="px-4 py-2.5 bg-cyan-400 hover:bg-cyan-300 text-black text-xs font-mono font-bold rounded shadow-lg shadow-cyan-400/20 transition-all hover:-translate-y-0.5"
               >
-                Explore Research Areas (Page 2) →
+                Explore Projects (Slide 03) →
               </button>
               <button
-                onClick={() => onNavigatePage ? onNavigatePage(5) : (window.location.hash = '#page-5')}
+                onClick={() => onNavigatePage ? onNavigatePage(2) : (window.location.hash = '#slide-2')}
                 className="px-4 py-2.5 bg-black hover:bg-stone-900 text-stone-200 border border-stone-700 hover:border-cyan-400 text-xs font-mono font-medium rounded transition-colors"
               >
-                Curriculum Vitae (Page 5)
+                Technical Skills (Slide 02) →
               </button>
             </div>
 
-            {/* Currently Area - Exact from CV */}
+            {/* Key Achievements Banner */}
             <div className="pt-3 border-t border-stone-800/80">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-400 block mb-1">
-                CURRENT INVESTIGATION
+              <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-400 block mb-2">
+                KEY ACHIEVEMENTS & STANDINGS
               </span>
-              <div className="text-sm">
-                <span className="font-medium text-white">
-                  {cvData.currently.role}
-                </span>
-                <span className="text-stone-400"> — {cvData.currently.group}</span>
-              </div>
-              <div className="text-xs text-stone-400 font-mono mt-0.5">
-                {cvData.currently.institution} · {cvData.currently.period}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+                <div className="p-2 rounded bg-black/80 border border-amber-500/30 flex items-center gap-2">
+                  <span className="text-amber-400 font-bold">🏆 4th Position</span>
+                  <span className="text-stone-300">Coding Premier League</span>
+                </div>
+                <div className="p-2 rounded bg-black/80 border border-cyan-500/30 flex items-center gap-2">
+                  <span className="text-cyan-300 font-bold">⚡ Hackathon</span>
+                  <span className="text-stone-300">HCL GUVI Hackathon</span>
+                </div>
               </div>
             </div>
 
             {/* Direct Connect Chips */}
             <div className="flex flex-wrap items-center gap-3 pt-1 text-xs font-mono text-stone-400">
-              <span className="text-stone-500 uppercase text-[10px]">Contact:</span>
+              <span className="text-stone-500 uppercase text-[10px]">Connect:</span>
               <button
                 onClick={handleCopyEmail}
                 className="hover:text-cyan-400 transition-colors"
               >
                 Email [{copied ? 'Copied!' : 'Copy'}]
               </button>
+              <span>·</span>
+              <a href={cvData.personal.whatsapp} target="_blank" rel="noreferrer" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                WhatsApp ↗
+              </a>
               <span>·</span>
               <a href={cvData.personal.githubUrl} target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors">
                 GitHub ↗
@@ -139,8 +144,12 @@ export default function HomeHero({ onNavigatePage }) {
                 LinkedIn ↗
               </a>
               <span>·</span>
-              <a href={cvData.personal.scholarUrl} target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors">
-                Google Scholar ↗
+              <a href={cvData.personal.instagramUrl} target="_blank" rel="noreferrer" className="text-pink-400 hover:text-pink-300 transition-colors">
+                Instagram ↗
+              </a>
+              <span>·</span>
+              <a href={cvData.personal.xUrl} target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors">
+                X ↗
               </a>
             </div>
           </div>

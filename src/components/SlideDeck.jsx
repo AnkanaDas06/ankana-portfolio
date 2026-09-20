@@ -1,22 +1,16 @@
 ﻿import React, { useState, useEffect, useRef } from 'react';
 import HomeHero from './HomeHero';
-import ResearchSection from './ResearchSection';
-import ProjectsSection from './ProjectsSection';
-import PublicationsSection from './PublicationsSection';
-import OpenSourceSection from './OpenSourceSection';
-import AcademicBackground from './AcademicBackground';
-import AchievementsAndLeadership from './AchievementsAndLeadership';
 import TechnicalProfile from './TechnicalProfile';
+import ProjectsSection from './ProjectsSection';
+import AcademicBackground from './AcademicBackground';
 import ContactSection from './ContactSection';
-import CvViewerSection from './CvViewerSection';
 
 export const SLIDES = [
   { id: 1, title: 'Profile & 3D Core', tag: 'OVERVIEW', desc: 'Identity, 3D Photo Hologram & Neural Simulation' },
-  { id: 2, title: 'Research Disciplines', tag: 'INVESTIGATION', desc: '4 Core Pillars & CAAQMS Lab Notebook' },
-  { id: 3, title: 'Projects Archive', tag: 'SYSTEMS', desc: 'Code Quality Engine, SANDHAN SIH Finalist & AlgoVault' },
-  { id: 4, title: 'Scholarly Publications', tag: 'MANUSCRIPTS', desc: '2026 Manuscripts in Preparation & BibTeX' },
-  { id: 5, title: 'Open Source & Education', tag: 'ENGINEERING', desc: 'GSSoC 2026 Maintainer & Adamas University Coursework' },
-  { id: 6, title: 'Honors, Skills & CV', tag: 'ACHIEVEMENTS', desc: 'National Awards, Technical Matrix & Printable CV' },
+  { id: 2, title: 'Skills & Languages', tag: 'TECHNOLOGY', desc: 'C, C++, Java, Python, React.js & Core CS' },
+  { id: 3, title: 'Featured Projects', tag: 'SYSTEMS', desc: 'YOLO Computer Vision, IDP, DBMS & Algorithms' },
+  { id: 4, title: 'Academics & Honors', tag: 'ACHIEVEMENTS', desc: 'Adamas Univ Semesters, CPL 4th Place & HCL GUVI' },
+  { id: 5, title: 'Contact & Socials', tag: 'CONNECT', desc: 'WhatsApp, LinkedIn, GitHub, Instagram & Email' },
 ];
 
 export default function SlideDeck({ currentSlide, setCurrentSlide }) {
@@ -52,7 +46,7 @@ export default function SlideDeck({ currentSlide, setCurrentSlide }) {
     }
   };
 
-  // Keyboard navigation: Arrow keys & Space
+  // Keyboard navigation: Arrow keys & PageUp/PageDown
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
@@ -101,18 +95,18 @@ export default function SlideDeck({ currentSlide, setCurrentSlide }) {
               <span className="text-cyan-300 font-bold tracking-widest">SLIDE_DECK_SYSTEM</span>
               <span className="text-stone-600">|</span>
               <span className="text-stone-300 uppercase font-semibold">
-                SLIDE 0{currentSlide} // {totalSlides} : {currentInfo.title}
+                SLIDE 0{currentSlide} // 0{totalSlides} : {currentInfo.title}
               </span>
             </div>
             <div className="flex items-center gap-2 text-stone-400 text-[10px]">
               <span className="text-emerald-400 font-semibold">{currentInfo.tag}</span>
               <span className="text-stone-600">|</span>
-              <span className="hidden sm:inline">Use [ ← / → ] or Swipe to advance</span>
+              <span className="hidden sm:inline">Press [ ← / → ] or swipe to navigate</span>
             </div>
           </div>
 
           {/* Segmented Timeline Progress Bar */}
-          <div className="grid grid-cols-6 gap-1.5 font-mono">
+          <div className="grid grid-cols-5 gap-1.5 font-mono">
             {SLIDES.map((slide) => {
               const isActive = slide.id === currentSlide;
               const isPast = slide.id < currentSlide;
@@ -162,82 +156,41 @@ export default function SlideDeck({ currentSlide, setCurrentSlide }) {
         <span className="text-xl font-mono transition-transform group-hover:translate-x-1">›</span>
       </button>
 
-      {/* 3. The Active Slide Stage (ONLY Active Slide is Rendered, Previous Slide Disappears!) */}
+      {/* 3. The Active Slide Stage (ONLY Current Slide is Visible, Previous Slide Disappears!) */}
       <div className="relative z-10 flex-grow w-full py-4">
         
         {/* SLIDE 1: Profile & 3D Interactive Workstation */}
         {currentSlide === 1 && (
-          <div
-            key="slide-1"
-            className={`w-full transition-all duration-300 ease-out ${
-              slideDirection === 'next' ? 'animate-fadeIn' : 'animate-fadeIn'
-            }`}
-          >
-            <HomeHero onNavigatePage={(page) => goToSlide(page === 2 ? 2 : 6)} />
+          <div key="slide-1" className="w-full animate-fadeIn">
+            <HomeHero onNavigatePage={(slideNum) => goToSlide(slideNum)} />
           </div>
         )}
 
-        {/* SLIDE 2: Research Disciplines & CAAQMS Air Quality Notebook */}
+        {/* SLIDE 2: Technical Skills & Programming Languages */}
         {currentSlide === 2 && (
-          <div
-            key="slide-2"
-            className={`w-full transition-all duration-300 ease-out ${
-              slideDirection === 'next' ? 'animate-fadeIn' : 'animate-fadeIn'
-            }`}
-          >
-            <ResearchSection />
+          <div key="slide-2" className="w-full animate-fadeIn">
+            <TechnicalProfile />
           </div>
         )}
 
-        {/* SLIDE 3: Technical Projects Archive (4 Major Systems) */}
+        {/* SLIDE 3: Technical Projects Archive */}
         {currentSlide === 3 && (
-          <div
-            key="slide-3"
-            className={`w-full transition-all duration-300 ease-out ${
-              slideDirection === 'next' ? 'animate-fadeIn' : 'animate-fadeIn'
-            }`}
-          >
+          <div key="slide-3" className="w-full animate-fadeIn">
             <ProjectsSection />
           </div>
         )}
 
-        {/* SLIDE 4: Scholarly Manuscripts & Publications */}
+        {/* SLIDE 4: Academic Background & Competitions */}
         {currentSlide === 4 && (
-          <div
-            key="slide-4"
-            className={`w-full transition-all duration-300 ease-out ${
-              slideDirection === 'next' ? 'animate-fadeIn' : 'animate-fadeIn'
-            }`}
-          >
-            <PublicationsSection />
-          </div>
-        )}
-
-        {/* SLIDE 5: Open Source & Academic Foundation */}
-        {currentSlide === 5 && (
-          <div
-            key="slide-5"
-            className={`w-full space-y-12 transition-all duration-300 ease-out ${
-              slideDirection === 'next' ? 'animate-fadeIn' : 'animate-fadeIn'
-            }`}
-          >
-            <OpenSourceSection />
+          <div key="slide-4" className="w-full animate-fadeIn">
             <AcademicBackground />
           </div>
         )}
 
-        {/* SLIDE 6: Honors, Technical Profile, Contact & Printable CV */}
-        {currentSlide === 6 && (
-          <div
-            key="slide-6"
-            className={`w-full space-y-12 transition-all duration-300 ease-out ${
-              slideDirection === 'next' ? 'animate-fadeIn' : 'animate-fadeIn'
-            }`}
-          >
-            <AchievementsAndLeadership />
-            <TechnicalProfile />
+        {/* SLIDE 5: Contact, WhatsApp & Social Profiles */}
+        {currentSlide === 5 && (
+          <div key="slide-5" className="w-full animate-fadeIn">
             <ContactSection />
-            <CvViewerSection />
           </div>
         )}
 

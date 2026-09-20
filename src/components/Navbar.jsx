@@ -6,11 +6,10 @@ export default function Navbar({ currentSlide = 1, setCurrentSlide }) {
 
   const navItems = [
     { label: '01 Profile & 3D', slide: 1 },
-    { label: '02 Research', slide: 2 },
+    { label: '02 Skills & Tech', slide: 2 },
     { label: '03 Projects', slide: 3 },
-    { label: '04 Publications', slide: 4 },
-    { label: '05 Open Source', slide: 5 },
-    { label: '06 Honors & CV', slide: 6 },
+    { label: '04 Academics & Honors', slide: 4 },
+    { label: '05 Contact & Connect', slide: 5 },
   ];
 
   const handleNavClick = (slideNum) => {
@@ -49,14 +48,14 @@ export default function Navbar({ currentSlide = 1, setCurrentSlide }) {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-1.5 text-xs font-mono">
+        <nav className="hidden md:flex items-center space-x-1.5 text-xs font-mono">
           {navItems.map((item) => {
             const isActive = currentSlide === item.slide;
             return (
               <button
                 key={item.label}
                 onClick={() => handleNavClick(item.slide)}
-                className={`px-2.5 py-1.5 rounded transition-all relative ${
+                className={`px-3 py-1.5 rounded transition-all relative ${
                   isActive 
                     ? 'text-cyan-300 bg-cyan-500/20 border border-cyan-500/50 font-bold shadow-sm' 
                     : 'text-stone-400 hover:text-white hover:bg-stone-900 border border-transparent'
@@ -68,20 +67,21 @@ export default function Navbar({ currentSlide = 1, setCurrentSlide }) {
           })}
         </nav>
 
-        {/* Action Button: View CV (Slide 6) */}
+        {/* Action Button: Get in Touch (Slide 5) */}
         <div className="hidden sm:flex items-center space-x-3">
           <button
-            onClick={() => handleNavClick(6)}
-            className="px-3 py-1.5 text-xs font-mono font-medium text-cyan-300 bg-cyan-950/40 border border-cyan-500/30 hover:border-cyan-400 hover:bg-cyan-900/30 rounded transition-colors"
+            onClick={() => handleNavClick(5)}
+            className="px-3 py-1.5 text-xs font-mono font-medium text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 hover:border-emerald-400 hover:bg-emerald-900/30 rounded transition-colors flex items-center gap-1.5"
           >
-            Curriculum Vitae
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Connect</span>
           </button>
         </div>
 
         {/* Mobile menu trigger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-stone-400 hover:text-white focus:outline-none"
+          className="md:hidden p-2 text-stone-400 hover:text-white focus:outline-none"
           aria-label="Toggle Navigation"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,7 +96,7 @@ export default function Navbar({ currentSlide = 1, setCurrentSlide }) {
 
       {/* Mobile dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-stone-950 border-b border-stone-800 px-6 py-4 space-y-2 font-mono">
+        <div className="md:hidden bg-stone-950 border-b border-stone-800 px-6 py-4 space-y-2 font-mono">
           {navItems.map((item) => {
             const isActive = currentSlide === item.slide;
             return (
@@ -113,10 +113,10 @@ export default function Navbar({ currentSlide = 1, setCurrentSlide }) {
           })}
           <div className="pt-2 border-t border-stone-800">
             <button
-              onClick={() => handleNavClick(6)}
-              className="inline-block text-xs font-mono text-cyan-400 hover:underline"
+              onClick={() => handleNavClick(5)}
+              className="inline-block text-xs font-mono text-emerald-400 hover:underline"
             >
-              View Curriculum Vitae (Slide 06)
+              Get In Touch (Slide 05)
             </button>
           </div>
         </div>
