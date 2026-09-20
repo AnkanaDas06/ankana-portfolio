@@ -4,6 +4,8 @@
  * Department of CSE, Adamas University, Kolkata
  */
 
+import photoUrl from '../assets/ankana-photo.jpg';
+
 export const cvData = {
   personal: {
     name: "Ankana Das",
@@ -22,7 +24,7 @@ export const cvData = {
     githubUrl: "https://github.com/AnkanaDas06",
     linkedinUrl: "https://www.linkedin.com/in/ankana-das2006",
     scholarUrl: "https://scholar.google.com",
-    photo: "/ankana-photo.jpg",
+    photo: photoUrl,
     statement: "Exploring reliable intelligent systems across automated software engineering, deep facial biometrics, high-performance C++ systems, and environmental data science.",
     overview: "Computer Science undergraduate specializing in Artificial Intelligence & Machine Learning at Adamas University, with research interests spanning automated software engineering, deep face biometrics, modern C++ systems architecture, and environmental data science. Experienced in developing machine learning pipelines for large-scale multi-sensor datasets, curating continuous atmospheric time series, and contributing to open-source developer tooling. Passionate about advancing reliable, scalable, and mathematically rigorous intelligent systems through the tight integration of academic research and robust systems engineering."
   },

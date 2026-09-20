@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { cvData } from '../data/cvData';
 import ResearchCore3D from './ResearchCore3D';
+import Photo3D from './Photo3D';
 import { TiltCard } from '../utils/tiltEffect';
 
 export default function HomeHero() {
@@ -143,52 +144,17 @@ export default function HomeHero() {
             </div>
           </div>
 
-          {/* Right Column: Full Main Profile Card + 3D Interactive Core */}
+          {/* Right Column: Interactive 3D Photo Hologram & Neural Core */}
           <div className="lg:col-span-5 flex flex-col space-y-4">
             
-            {/* 1. Main Profile Photo in Professional Workstation Monitor Bezel */}
-            <TiltCard maxTilt={6} className="rounded-sm shadow-2xl">
-              <div className="p-3 bg-black border border-cyan-500/40 rounded-sm shadow-2xl shadow-cyan-950/50 relative overflow-hidden">
-                {/* Monitor Window Top Bar */}
-                <div className="flex items-center justify-between pb-2 mb-2 border-b border-stone-800 text-[11px] font-mono text-stone-400">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-500/80 inline-block" />
-                    <span className="text-stone-400 ml-1">PROFILE_MONITOR.IMG</span>
-                  </div>
-                  <span className="text-emerald-400 font-semibold">● VERIFIED</span>
-                </div>
+            {/* 1. Interactive 3D WebGL Photo Hologram */}
+            <Photo3D />
 
-                {/* Main Photo */}
-                <div className="relative overflow-hidden rounded-sm border border-stone-800">
-                  <img
-                    src={cvData.personal.photo}
-                    alt="Ankana Das - Lead Student Researcher, Adamas University"
-                    className="w-full h-72 sm:h-80 object-cover object-top filter contrast-[1.03] hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none" />
-
-                  {/* Lower Overlay Badge */}
-                  <div className="absolute bottom-3 inset-x-3 bg-black/90 p-3 rounded-sm border border-stone-800 text-xs font-mono space-y-1">
-                    <div className="flex items-center justify-between">
-                      <span className="text-white font-bold font-serif text-sm">Ankana Das</span>
-                      <span className="text-cyan-400 text-[11px]">ankanadas.com</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[11px] text-stone-300 pt-0.5 border-t border-stone-800/80">
-                      <span className="text-stone-400">Adamas University</span>
-                      <span className="text-amber-400 font-semibold">Top 10 SIH Finalist</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TiltCard>
-
-            {/* 2. Real-Time 3D Interactive Neural Core Widget */}
+            {/* 2. Secondary 3D Neural Core Widget */}
             <div className="p-3 bg-black/90 border border-stone-800 rounded-sm shadow-xl relative">
               <div className="flex items-center justify-between pb-1.5 mb-1 border-b border-stone-800/80 text-[10px] font-mono text-stone-400">
                 <span className="text-cyan-400 font-semibold">3D NEURAL CORE SIMULATION</span>
-                <span>DRAG TO ROTATE IN 3D</span>
+                <span className="text-stone-500">CAAQMS_LAYER: ONLINE</span>
               </div>
               <ResearchCore3D />
             </div>
