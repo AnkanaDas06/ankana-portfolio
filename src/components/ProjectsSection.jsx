@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { cvData } from '../data/cvData';
 import { TiltCard } from '../utils/tiltEffect';
 
@@ -13,10 +13,10 @@ export default function ProjectsSection() {
             SLIDE 03 // PROJECTS
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-normal text-white tracking-tight">
-            Technical & Practical Projects
+            Computer Vision (CV) & AI Projects
           </h2>
           <p className="mt-2 text-stone-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-            Software projects and algorithmic repositories developed by Ankana Das, focusing on computer vision, database architectures, team collaboration, and data structures.
+            Cutting-edge Computer Vision (CV), Deep Learning, and Artificial Intelligence projects developed by Ankana Das, focusing on real-time neural inference, facial biometrics, autonomous perception, and gesture tracking.
           </p>
         </div>
 

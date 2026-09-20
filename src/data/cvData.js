@@ -1,4 +1,4 @@
-﻿import photoUrl from '../assets/ankana-photo.jpg';
+import photoUrl from '../assets/ankana-photo.jpg';
 
 export const cvData = {
   personal: {
@@ -67,35 +67,35 @@ export const cvData = {
   projects: [
     {
       id: "yolo-vision",
-      title: "Real-Time Object Detection & Computer Vision (YOLO)",
-      tags: ["Python", "YOLO", "Computer Vision", "Deep Learning"],
+      title: "Real-Time Object Detection & Spatial Tracking (YOLOv8)",
+      tags: ["Computer Vision", "YOLOv8", "PyTorch", "OpenCV", "Deep Learning"],
       github: "https://github.com/AnkanaDas06/yolo",
-      summary: "Real-time object detection and recognition system exploring deep learning vision models for multi-class identification and spatial bounding.",
-      tech: "Python, OpenCV, YOLO Architecture"
+      summary: "Custom real-time multi-class object detection and spatial tracking engine implementing YOLOv8 architecture with PyTorch, OpenCV, and high-FPS bounding box estimation.",
+      tech: "Python, YOLOv8, PyTorch, OpenCV, CUDA"
     },
     {
-      id: "idp-collab",
-      title: "Interdisciplinary Collaborative Project (IDP)",
-      tags: ["Software Engineering", "Team Project", "Web/Python"],
-      github: "https://github.com/AnkanaDas06/IDP-PROJECT",
-      summary: "Collaborative multi-disciplinary team project developing modular software solutions, focusing on clean engineering and group workflow.",
-      tech: "Python, Git & GitHub, Modular Architecture"
+      id: "facial-biometrics-emotion",
+      title: "Facial Biometrics & Real-Time Emotion Recognition",
+      tags: ["Computer Vision", "FaceNet", "OpenCV", "Deep Learning", "MediaPipe"],
+      github: "https://github.com/AnkanaDas06",
+      summary: "Deep learning computer vision system for facial landmark alignment, 512-D biometric vector verification, and multi-class real-time facial expression and emotion classification.",
+      tech: "Python, OpenCV, DeepFace, FaceNet, MediaPipe"
     },
     {
-      id: "dbms-system",
-      title: "Database Management System (DBMS) Architecture",
-      tags: ["SQL", "DBMS", "Schema Design", "Relational Database"],
-      github: "https://github.com/AnkanaDas06/DBMS",
-      summary: "Comprehensive relational database design implementing schema normalization, complex SQL joins, indexing, and transactional integrity.",
-      tech: "MySQL, Relational Algebra, Data Modeling"
+      id: "autonomous-lane-detection",
+      title: "Autonomous Perception: Lane & Obstacle Detection Pipeline",
+      tags: ["Computer Vision", "Autonomous AI", "OpenCV", "CNN", "Edge AI"],
+      github: "https://github.com/AnkanaDas06",
+      summary: "Vision pipeline for self-driving perception utilizing perspective geometry transforms, Hough space line tracking, edge filtering, and real-time vehicular obstacle segmentation.",
+      tech: "Python, OpenCV, NumPy, Convolutional Neural Networks"
     },
     {
-      id: "c-cpp-algorithms",
-      title: "Algorithmic Problem Solving & Data Structures (C/C++)",
-      tags: ["C", "C++", "Data Structures", "Algorithms", "DSA"],
-      github: "https://github.com/AnkanaDas06/C-programmes-upto-final",
-      summary: "Extensive repository of algorithmic implementations covering dynamic memory, pointers, trees, graphs, sorting, searching, and competitive coding.",
-      tech: "C, C++20, STL, Algorithmic Analysis"
+      id: "gesture-vision-controller",
+      title: "Interactive AI Gesture Recognition & Virtual Controller",
+      tags: ["Computer Vision", "MediaPipe", "OpenCV", "HCI", "Gesture AI"],
+      github: "https://github.com/AnkanaDas06",
+      summary: "Touchless human-computer interaction system tracking 21 3D hand landmarks in real-time to translate dynamic hand gestures into virtual interface commands and spatial drawing controls.",
+      tech: "Python, MediaPipe, OpenCV, Scikit-Learn"
     }
   ]
 };
