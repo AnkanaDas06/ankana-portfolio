@@ -1,3 +1,5 @@
+import photoUrl from '../assets/ankana-photo.jpg';
+
 export const portfolioData = {
   personal: {
     name: "Ankana Das",
@@ -13,7 +15,7 @@ export const portfolioData = {
     ],
     bio: "A passionate Computer Science and Engineering student at Adamas University with a strong enthusiasm for coding, Artificial Intelligence, and Machine Learning. I am driven by curiosity and a desire to turn ideas into practical, technology-driven solutions. I enjoy learning new concepts, solving programming problems, and exploring AI/ML applications. I aim to strengthen my technical expertise while actively contributing to collaborative projects and the wider computing community.",
     location: "West Bengal, India",
-    photo: "/ankana-photo.jpg",
+    photo: photoUrl,
     email: "dasankana410@gmail.com",
     phone: "+91 9434987543",
     whatsapp: "https://wa.me/919434987543",
