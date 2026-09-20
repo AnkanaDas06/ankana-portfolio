@@ -4,7 +4,7 @@ import ResearchCore3D from './ResearchCore3D';
 import Photo3D from './Photo3D';
 import { TiltCard } from '../utils/tiltEffect';
 
-export default function HomeHero() {
+export default function HomeHero({ onNavigatePage }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
@@ -91,18 +91,18 @@ export default function HomeHero() {
 
             {/* Actions */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
-              <a
-                href="#research"
+              <button
+                onClick={() => onNavigatePage ? onNavigatePage(2) : (window.location.hash = '#page-2')}
                 className="px-4 py-2.5 bg-cyan-400 hover:bg-cyan-300 text-black text-xs font-mono font-bold rounded shadow-lg shadow-cyan-400/20 transition-all hover:-translate-y-0.5"
               >
-                Explore Research Areas →
-              </a>
-              <a
-                href="#cv-view"
+                Explore Research Areas (Page 2) →
+              </button>
+              <button
+                onClick={() => onNavigatePage ? onNavigatePage(5) : (window.location.hash = '#page-5')}
                 className="px-4 py-2.5 bg-black hover:bg-stone-900 text-stone-200 border border-stone-700 hover:border-cyan-400 text-xs font-mono font-medium rounded transition-colors"
               >
-                Curriculum Vitae (PDF)
-              </a>
+                Curriculum Vitae (Page 5)
+              </button>
             </div>
 
             {/* Currently Area - Exact from CV */}

@@ -1,44 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { cvData } from '../data/cvData';
 
-export default function Navbar() {
-  const [activeSection, setActiveSection] = useState('home');
+export default function Navbar({ currentPage = 1, setCurrentPage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'research', 'projects', 'publications', 'open-source', 'about', 'contact'];
-      const current = sections.find((section) => {
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          return rect.top <= 120 && rect.bottom >= 120;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const navItems = [
-    { label: 'Research', href: '#research' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Publications', href: '#publications' },
-    { label: 'Open Source', href: '#open-source' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+    { label: '01 Profile & 3D', page: 1 },
+    { label: '02 Research & Projects', page: 2 },
+    { label: '03 Publications', page: 3 },
+    { label: '04 Academics', page: 4 },
+    { label: '05 Skills & CV', page: 5 },
   ];
+
+  const handleNavClick = (pageNum) => {
+    if (setCurrentPage) {
+      setCurrentPage(pageNum);
+      window.location.hash = `page-${pageNum}`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-[#05070c]/90 backdrop-blur-md border-b border-stone-800/80 transition-colors">
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Brand identity */}
-        <a 
-          href="#home" 
-          className="group flex items-center gap-3 text-white hover:text-cyan-400 transition-colors focus:outline-none"
+        <button 
+          onClick={() => handleNavClick(1)} 
+          className="group flex items-center gap-3 text-left text-white hover:text-cyan-400 transition-colors focus:outline-none"
         >
           <div className="relative w-8 h-8 rounded-full overflow-hidden border border-cyan-500/50 p-0.5">
             <img
@@ -56,39 +45,36 @@ export default function Navbar() {
               ankanadas.com · Adamas Univ
             </span>
           </div>
-        </a>
+        </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6 text-xs font-mono">
+        <nav className="hidden md:flex items-center space-x-2 text-xs font-mono">
           {navItems.map((item) => {
-            const isActive = activeSection === item.href.replace('#', '');
+            const isActive = currentPage === item.page;
             return (
-              <a
+              <button
                 key={item.label}
-                href={item.href}
-                className={`py-1 transition-colors relative ${
+                onClick={() => handleNavClick(item.page)}
+                className={`px-3 py-1.5 rounded transition-all relative ${
                   isActive 
-                    ? 'text-cyan-400 font-semibold' 
-                    : 'text-stone-400 hover:text-white'
+                    ? 'text-cyan-300 bg-cyan-500/15 border border-cyan-500/40 font-bold shadow-sm' 
+                    : 'text-stone-400 hover:text-white hover:bg-stone-900 border border-transparent'
                 }`}
               >
                 {item.label}
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-cyan-400 rounded-full" />
-                )}
-              </a>
+              </button>
             );
           })}
         </nav>
 
-        {/* Action Button: View CV */}
+        {/* Action Button: View CV (Page 5) */}
         <div className="hidden sm:flex items-center space-x-3">
-          <a
-            href="#cv-view"
+          <button
+            onClick={() => handleNavClick(5)}
             className="px-3 py-1.5 text-xs font-mono font-medium text-cyan-300 bg-cyan-950/40 border border-cyan-500/30 hover:border-cyan-400 hover:bg-cyan-900/30 rounded transition-colors"
           >
             Curriculum Vitae
-          </a>
+          </button>
         </div>
 
         {/* Mobile menu trigger */}
@@ -109,25 +95,28 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-dark-950 border-b border-stone-800 px-6 py-4 space-y-3 font-mono">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-xs text-stone-300 hover:text-cyan-400 py-1"
-            >
-              {item.label}
-            </a>
-          ))}
+        <div className="md:hidden bg-stone-950 border-b border-stone-800 px-6 py-4 space-y-2 font-mono">
+          {navItems.map((item) => {
+            const isActive = currentPage === item.page;
+            return (
+              <button
+                key={item.label}
+                onClick={() => handleNavClick(item.page)}
+                className={`w-full text-left text-xs py-2 px-3 rounded transition-colors ${
+                  isActive ? 'bg-cyan-500/20 text-cyan-300 font-bold' : 'text-stone-300 hover:text-cyan-400'
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
           <div className="pt-2 border-t border-stone-800">
-            <a
-              href="#cv-view"
-              onClick={() => setMobileMenuOpen(false)}
+            <button
+              onClick={() => handleNavClick(5)}
               className="inline-block text-xs font-mono text-cyan-400 hover:underline"
             >
-              View Curriculum Vitae (PDF)
-            </a>
+              View Curriculum Vitae (Page 5)
+            </button>
           </div>
         </div>
       )}
